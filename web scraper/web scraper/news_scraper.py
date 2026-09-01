@@ -27,4 +27,10 @@ headlines = soup.find_all("h2")
 
 # Print each headline
 for headline in headlines:
-    print(headline.text.strip())
+ print(headline.text.strip())
+#Save headlines to a text file
+with open("headlines.txt", "w", encoding="utf-8") as file:
+    for headline in headlines:
+        file.write(headline.text.strip() + "\n")
+
+print("Headlines saved successfully!")   
